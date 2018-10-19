@@ -1,151 +1,173 @@
-
 let inputNumber = prompt("Please enter a number between 0 and 999");
 
 function translate(inputNumber) {
     let hundreds = ["", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
-    let tens = ["", "", "twenty", "thirty", "fourty", "fifty", "sixty", "seventy", "eighty", "ninety"];
-    let unitsAndTeens = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "elven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"];
+    let tens = ["", "ten", "twenty", "thirty", "fourty", "fifty", "sixty", "seventy", "eighty", "ninety"];
+    let unitsAndTeens = ["", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "",
+        "elven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"];
+
+    inputNumber = parseInt(inputNumber);
 
     while (inputNumber < 0 || inputNumber > 999 || inputNumber === false || isNaN(inputNumber)) {
         alert("Not recognised.");
-        prompt(inputNumber);
+        inputNumber = prompt("Please enter a number between 0 and 999");
+    };
+
+    if (inputNumber === 0) {
+        return ("zero");
     };
 
     let unita = inputNumber % 10;
     let decine = inputNumber / 10 % 10;
     let centinaia = inputNumber / 100 % 10;
 
-    switch (unita) {
-        case "0":
-            let u0 = unitsAndTeens[0];
-            break;
-        case "1":
-            let u1 = unitsAndTeens[1];
-            break;
-        case "2":
-            let u2 = unitsAndTeens[2];
-            break;
-        case "3":
-            let u3 = unitsAndTeens[3];
-            break;
-        case "4":
-            let u4 = unitsAndTeens[4];
-            break;
-        case "5":
-            let u5 = unitsAndTeens[5];
-            break;
-        case "6":
-            let u6 = unitsAndTeens[6];
-            break;
-        case "7":
-            let u7 = unitsAndTeens[7];
-            break;
-        case "8":
-            let u8 = unitsAndTeens[8];
-            break;
-        case "9":
-            let u9 = unitsAndTeens[9];
-            break;
-        case "10":
-            let u10 = unitsAndTeens[10];
-            break;
-        case "11":
-            let u11 = unitsAndTeens[11];
-            break;
-        case "12":
-            let u12 = unitsAndTeens[12];
-            break;
-        case "13":
-            let u13 = unitsAndTeens[13];
-            break;
-        case "14":
-            let u14 = unitsAndTeens[14];
-            break;
-        case "15":
-            let u15 = unitsAndTeens[15];
-            break;
-        case "16":
-            let u16 = unitsAndTeens[16];
-            break;
-        case "17":
-            let u17 = unitsAndTeens[17];
-            break;
-        case "18":
-            let u18 = unitsAndTeens[18];
-            break;
-        case "19":
-            let u19 = unitsAndTeens[19];
-            break;
+    decine = Math.floor(decine);
+    centinaia = Math.floor(centinaia);
+    console.log(centinaia, decine, unita);
 
+    let u;
+    let d;
+    let c;
+
+    switch (centinaia) {
+        case 0:
+            c = hundreds[0];
+            break;
+        case 1:
+            c = hundreds[1];
+            break;
+        case 2:
+            c = hundreds[2];
+            break;
+        case 3:
+            c = hundreds[3];
+            break;
+        case 4:
+            c = hundreds[4];
+            break;
+        case 5:
+            c = hundreds[5];
+            break;
+        case 6:
+            c = hundreds[6];
+            break;
+        case 7:
+            c = hundreds[7];
+            break;
+        case 8:
+            c = hundreds[8];
+            break;
+        case 9:
+            c = hundreds[9];
+            break;
+        case 10:
+            c = hundreds[10];
     };
 
     switch (decine) {
-        case "0":
-            let d0 = unitsAndTeens[0];
+        case 0:
+            d = tens[0];
             break;
-        case "1":
-            let d1 = unitsAndTeens[1];
+        case 1:
+            d = 1;
             break;
-        case "2":
-            let d2 = unitsAndTeens[2];
+        case 2:
+            d = tens[2];
             break;
-        case "3":
-            let d3 = unitsAndTeens[3];
+        case 3:
+            d = tens[3];
             break;
-        case "4":
-            let d4 = unitsAndTeens[4];
+        case 4:
+            d = tens[4];
             break;
-        case "5":
-            let d5 = unitsAndTeens[5];
+        case 5:
+            d = tens[5];
             break;
-        case "6":
-            let d6 = unitsAndTeens[6];
+        case 6:
+            d = tens[6];
             break;
-        case "7":
-            let d7 = unitsAndTeens[7];
+        case 7:
+            d = tens[7];
             break;
-        case "8":
-            let d8 = unitsAndTeens[8];
+        case 8:
+            d = tens[8];
             break;
-        case "9":
-            let d9 = unitsAndTeens[9];
+        case 9:
+            d = tens[9];
             break;
-        case "10":
-            let d10 = unitsAndTeens[10];
+        case 10:
+            d = tens[10];
     };
 
-    switch (decine) {
-        case "0":
-            let c0 = unitsAndTeens[0];
-            break;
-        case "1":
-            let c1 = unitsAndTeens[1];
-            break;
-        case "2":
-            let c2 = unitsAndTeens[2];
-            break;
-        case "3":
-            let c3 = unitsAndTeens[3];
-            break;
-        case "4":
-            let c4 = unitsAndTeens[4];
-            break;
-        case "5":
-            let c5 = unitsAndTeens[5];
-            break;
-        case "6":
-            let c6 = unitsAndTeens[6];
-            break;
-        case "7":
-            let c7 = unitsAndTeens[7];
-            break;
-        case "8":
-            let c8 = unitsAndTeens[8];
-            break;
-        case "9":
-            let c9 = unitsAndTeens[9];
-            break;
-        case "10":
-            let c10 = unitsAndTeens[10];
+    if (d == 1) {
+        d = tens[0];
+        switch (unita) {
+            case 1:
+                u = unitsAndTeens[11];
+                break;
+            case 2:
+                u = unitsAndTeens[12];
+                break;
+            case 3:
+                u = unitsAndTeens[13];
+                break;
+            case 4:
+                u = unitsAndTeens[14];
+                break;
+            case 5:
+                u = unitsAndTeens[15];
+                break;
+            case 6:
+                u = unitsAndTeens[16];
+                break;
+            case 7:
+                u = unitsAndTeens[17];
+                break;
+            case 8:
+                u = unitsAndTeens[18];
+                break;
+            case 9:
+                u = unitsAndTeens[19];
+                break;
+        };
+    } else {
+        switch (unita) {
+            case 1:
+                u = unitsAndTeens[1];
+                break;
+            case 2:
+                u = unitsAndTeens[2];
+                break;
+            case 3:
+                u = unitsAndTeens[3];
+                break;
+            case 4:
+                u = unitsAndTeens[4];
+                break;
+            case 5:
+                u = unitsAndTeens[5];
+                break;
+            case 6:
+                u = unitsAndTeens[6];
+                break;
+            case 7:
+                u = unitsAndTeens[7];
+                break;
+            case 8:
+                u = unitsAndTeens[8];
+                break;
+            case 9:
+                u = unitsAndTeens[9];
+                break;
+        };
     }
-}
+    console.log(c, d, u);
+    console.log(inputNumber);
+
+    if (centinaia > 0) {
+        return (c + " hundred " + d + " " + u);
+    } else {
+        return (d + " " + u);
+    };
+};
+alert(translate(inputNumber));
